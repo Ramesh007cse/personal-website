@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramesh I - Portfolio</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- Boxicons for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ramesh I</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class='bx bx-menu'></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Hi, I'm <span class="text-primary">Ramesh I</span></h1>
+            <p>Web Developer | JavaScript Enthusiast</p>
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="container py-5" id="about" data-aos="fade-up">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <img src="profile.jpg" class="img-fluid rounded-circle" alt="Ramesh">
+            </div>
+            <div class="col-md-8">
+                <h2>About Me</h2>
+                <p>I am a passionate Web Developer skilled in HTML, CSS, JavaScript, MySQL, PHP, and Java.</p>
+                <a href="MyResume.pdf" download class="btn btn-outline-dark">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+<section class="bg-light py-5" id="skills" data-aos="fade-up">
+    <div class="container">
+        <h2 class="text-center mb-4">Skills</h2>
+        <div class="row text-center">
+            <div class="col-md-2 d-flex flex-column align-items-center">
+                <i class='bx bxl-html5 text-danger fs-1'></i>
+                <span>HTML</span>
+            </div>
+            <div class="col-md-2 d-flex flex-column align-items-center">
+                <i class='bx bxl-css3 text-primary fs-1'></i>
+                <span>CSS</span>
+            </div>
+            <div class="col-md-2 d-flex flex-column align-items-center">
+                <i class='bx bxl-javascript text-warning fs-1'></i>
+                <span>JavaScript</span>
+            </div>
+            <div class="col-md-2 d-flex flex-column align-items-center">
+                <i class='bx bxs-data text-success fs-1'></i>
+                <span>MySQL</span>
+            </div>
+            <div class="col-md-2 d-flex flex-column align-items-center">
+                <i class='fa-brands fa-php text-info fs-1'></i> 
+                <span>PHP</span>
+            </div>
+            <div class="col-md-2 d-flex flex-column align-items-center">
+                <i class='fa-brands fa-java text-danger fs-1'></i> 
+                <span>Java</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Projects Section -->
+<section class="container py-5" id="projects">
+    <h2 class="text-center">Projects</h2>
+    <div class="row">
+        <div class="col-md-3" data-aos="zoom-in">
+            <div class="card project-card">
+                <img src="agri-helpline.png" class="card-img-top" alt="Agri Helpline">
+                <div class="card-body">
+                    <h5 class="card-title">Agri Helpline</h5>
+                    <p class="card-text">Provides farmers with expert advice, solutions, and support on agriculture.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="zoom-in">
+            <div class="card project-card">
+                <img src="computer-shop.jpg" class="card-img-top" alt="Computer Hardware Shop">
+                <div class="card-body">
+                    <h5 class="card-title">Computer Hardware Shop</h5>
+                    <p class="card-text">Online ordering and servicing of computer hardware products.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="zoom-in">
+            <div class="card project-card">
+                <img src="temperature-prediction.jpg" class="card-img-top" alt="Real-Time Temperature Prediction">
+                <div class="card-body">
+                    <h5 class="card-title">Real-Time Temperature Prediction</h5>
+                    <p class="card-text">Predicts live temperature using JavaScript.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" data-aos="zoom-in">
+            <div class="card project-card">
+                <img src="bmi.jpg" class="card-img-top" alt="BMI Calculator">
+                <div class="card-body">
+                    <h5 class="card-title">BMI Calculator</h5>
+                    <p class="card-text">A simple BMI calculator built with HTML, CSS, and JavaScript.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section -->
+<section class="bg-dark text-white py-5" id="contact">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact Me</h2>
+        
+        <div class="row justify-content-center">
+            <!-- Contact Info Cards -->
+            <div class="col-md-4">
+                <div class="card text-center p-3">
+                    <i class="fas fa-phone fa-2x text-primary"></i>
+                    <h5 class="mt-2">Phone</h5>
+                    <p>+91 93606 56401</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center p-3">
+                    <i class="fas fa-envelope fa-2x text-danger"></i>
+                    <h5 class="mt-2">Email</h5>
+                    <p><a href="mailto:ramesh10ram6@gmail.com" class="text-dark text-decoration-none">ramesh10ram6@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center p-3">
+                    <i class="fas fa-map-marker-alt fa-2x text-success"></i>
+                    <h5 class="mt-2">Location</h5>
+                    <p>Dindigul, India</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Add FontAwesome for Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <h5>RAMESH I</h5>
+        <p>📞 +91 93606 56401 | 📧 <a href="mailto:ramesh10ram6@gmail.com" class="text-white text-decoration-none">ramesh10ram6@gmail.com</a></p>
+
+        <!-- Social Media Links -->
+        <div class="social-icons my-2">
+            <a href="https://github.com/Ramesh007cse" target="_blank" class="text-white mx-2">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ramesh-i-1bb963223" target="_blank" class="text-white mx-2">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+        </div>
+
+        <!-- Copyright -->
+        <p class="mt-3">© 2024 <strong>Ramesh Portfolio</strong>. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <!-- Add FontAwesome for Java Icon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+ 
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
