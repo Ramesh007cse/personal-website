@@ -1,0 +1,880 @@
+z<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio of Ramesh I, Web Developer">
+    <meta name="keywords" content="web developer, portfolio, JavaScript, HTML, CSS">
+    <title>Ramesh I | Web Developer Portfolio</title>
+    
+    <!-- Favicon (temporarily removed) -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+    
+    <!-- Rest of the file remains exactly the same -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles-enhanced-v2.css">
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --accent-color: #e74c3c;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+      }
+      
+      
+      /* Modern Navbar */
+      .navbar {
+        padding: 1.2rem 0;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        backdrop-filter: blur(10px);
+        background-color: rgba(44, 62, 80, 0.9);
+        transition: all 0.3s ease;
+      }
+      
+      .navbar.scrolled {
+        padding: 0.8rem 0;
+        box-shadow: 0 4px 30px rgba(0,0,0,0.1);
+      }
+      
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+      
+      /* Simple Hero Section */
+      .hero {
+        background: #2c3e50;
+        color: white;
+        padding: 6rem 0;
+        text-align: center;
+      }
+      
+      .hero-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      
+      .hero-text {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        opacity: 0.9;
+      }
+      
+      .hero-cta .btn {
+        margin: 0 0.5rem;
+      }
+      
+      @media (max-width: 768px) {
+        .hero {
+          padding: 4rem 0;
+        }
+        .hero-title {
+          font-size: 2rem;
+        }
+      }
+      
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      
+      @keyframes float {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(50px, 50px) rotate(180deg); }
+        100% { transform: translate(0, 0) rotate(360deg); }
+      }
+      
+      .hero h1 {
+        font-weight: 2000;
+        margin-bottom: 5rem;
+        transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.8s ease;
+        animation: fadeInUp 1s ease forwards;
+        font-size: 10rem;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+      
+      /* Section Headings */
+      .section-title {
+        position: relative;
+        margin-bottom: 3rem;
+        font-weight: 700;
+      }
+      
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary-color);
+      }
+      
+      /* About Section - Animated Bubble Design */
+      .about-img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--primary-color);
+        box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        animation: pulse 3s ease-in-out infinite;
+      }
+      
+      .about-img::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .about-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px 10px rgba(52, 152, 219, 0.3);
+      }
+      
+      .about-img:hover::before {
+        opacity: 1;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { 
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+        }
+        50% { 
+          transform: scale(1.02);
+          box-shadow: 0 0 20px 5px rgba(52, 152, 219, 0.3);
+        }
+      }
+      
+      /* Skills Section */
+      .skills-section {
+        background-color: var(--light-color);
+      }
+      
+      .skill-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      /* Modern Project Cards */
+      .project-card {
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background: white;
+        position: relative;
+      }
+      
+      .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      }
+      
+      .project-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+      
+      .project-card img {
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .project-card .card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .project-card .card-text {
+        flex-grow: 1;
+      }
+      
+      .tech-badge {
+        margin-right: 5px;
+        margin-bottom: 5px;
+      }
+      
+      /* Contact Section */
+      .contact-section {
+        background: linear-gradient(135deg, #1a1a1a, #333333);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .contact-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: float 15s infinite linear;
+      }
+      
+      /* Unified contact card styling */
+      .contact-section .card {
+        border: none;
+        border-radius: 10px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 100%;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      
+      .contact-section .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        background: rgba(255, 255, 255, 0.2);
+      }
+      
+      /* Contact method cards inside contact section */
+      .contact-method {
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .contact-method:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .wave-divider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+      }
+      
+      .wave-divider svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 50px;
+      }
+      
+      .wave-divider .shape-fill {
+        fill: var(--light-color);
+      }
+      
+      /* Footer */
+      footer {
+        background-color: var(--dark-color);
+        color: white;
+      }
+      
+      .social-icon {
+        color: white;
+        font-size: 1.5rem;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
+      
+      .social-icon:hover {
+        color: var(--primary-color);
+        transform: translateY(-3px);
+      }
+
+      /* Dark Theme Styles */
+      body.dark-theme {
+        background-color: #121212;
+        color: #f5f5f5;
+      }
+      
+      .dark-theme .hero {
+        background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      }
+      
+      @media (max-width: 768px) {
+        .hero {
+          padding: 8rem 0 6rem;
+        }
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .hero {
+          padding: 6rem 0 4rem;
+        }
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+      
+      .dark-theme .skills-section {
+        background-color: #1e1e1e;
+      }
+      
+      .dark-theme .project-card {
+        background-color: #1e1e1e;
+        color: #f5f5f5;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      }
+      
+      .dark-theme .project-card:hover {
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      }
+      
+      .dark-theme .contact-section {
+        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      }
+      
+      .dark-theme footer {
+        background-color: #0d0d0d;
+      }
+    </style>
+</head>
+<body>
+    <!-- Dark Mode Toggle -->
+    <button id="themeToggle" class="btn btn-sm position-fixed top-0 end-0 m-3 z-3">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">RAMESH I</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Removed -->
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-5" data-aos="fade-right">
+                    <img src="profile.jpg" alt="Ramesh I" class="img-fluid about-img">
+                </div>
+                <div class="col-md-7" data-aos="fade-left">
+                    <h3>Who am I?</h3>
+                    <p>I'm a passionate Full Stack Web Developer with expertise in building modern web applications. With a strong foundation in both front-end and back-end technologies, I create efficient, scalable, and user-friendly solutions.</p>
+                    <p>My approach combines technical skills with creative problem-solving to deliver high-quality products that meet both business and user needs.</p>
+                    <div class="mt-4">
+                        <a href="MyResume.pdf" download class="btn btn-primary me-2">Download Resume</a>
+                        <a href="#contact" class="btn btn-outline-secondary">Hire Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-5 skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">My Skills</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-icon text-danger">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h4>HTML5</h4>
+                    <p>Semantic markup, accessibility, SEO optimization</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-icon text-primary">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h4>CSS3</h4>
+                    <p>Responsive design, animations, Flexbox/Grid</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-icon text-warning">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h4>JavaScript</h4>
+                    <p>ES6+, DOM manipulation, async programming</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-icon text-info">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h4>React</h4>
+                    <p>Components, Hooks, Context API, Redux</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="skill-icon text-danger">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4>MySQL</h4>
+                    <p>Database design, queries, optimization</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="skill-icon text-primary">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h4>PHP</h4>
+                    <p>Backend development, server-side scripting</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="skill-icon text-info">
+                        <i class="fab fa-bootstrap"></i>
+                    </div>
+                    <h4>Bootstrap</h4>
+                    <p>Responsive frameworks, UI components</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="skill-icon text-danger">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h4>Java</h4>
+                    <p>Object-oriented programming, Spring framework</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="py-5 tools-section" id="tools">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">My Tools</h2>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="tool-icon text-primary">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h4>Git</h4>
+                    <p>Version control and collaboration</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="tool-icon text-info">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h4>GitHub</h4>
+                    <p>Code hosting and project management</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="tool-icon text-warning">
+                        <i class="fab fa-figma"></i>
+                    </div>
+                    <h4>Figma</h4>
+                    <p>UI/UX design and prototyping</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="tool-icon text-danger">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h4>VS Code</h4>
+                    <p>Code editing and debugging</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="tool-icon text-success">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>ChatGPT</h4>
+                    <p>AI-powered coding assistance</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="tool-icon text-dark">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Blackbox</h4>
+                    <p>AI code generation and completion</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="700">
+                    <div class="tool-icon text-primary">
+                        <i class="fas fa-file-word"></i>
+                    </div>
+                    <h4>MS Office</h4>
+                    <p>Documentation and presentations</p>
+                </div>
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="800">
+                    <div class="tool-icon text-warning">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4>XAMPP</h4>
+                    <p>Local web server environment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-5" id="projects">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">My Projects</h2>
+            <div class="row g-4">
+                <!-- BMI Calculator -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card project-card">
+                        <img src="bmi.jpg" class="card-img-top" alt="BMI Calculator">
+                        <div class="card-body">
+                            <h5 class="card-title">BMI Calculator</h5>
+                            <p class="card-text">Interactive tool to calculate Body Mass Index with health recommendations.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary tech-badge">HTML</span>
+                                <span class="badge bg-success tech-badge">CSS</span>
+                                <span class="badge bg-info tech-badge">JavaScript</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="bmi-calculator-demo.html" class="btn btn-sm btn-outline-primary">Live Demo</a>
+                                <a href="https://github.com/Ramesh007cse/BMI-Calculator" class="btn btn-sm btn-outline-dark">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Website -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card">
+                        <img src="personal-website.jpg" class="card-img-top" alt="Personal Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Personal Website</h5>
+                            <p class="card-text">Custom portfolio website showcasing my work and skills.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary tech-badge">HTML</span>
+                                <span class="badge bg-success tech-badge">CSS</span>
+                                <span class="badge bg-info tech-badge">JavaScript</span>
+                                <span class="badge bg-warning tech-badge">Bootstrap</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="portfolio-demo.html" class="btn btn-sm btn-outline-primary">View Demo</a>
+                                <a href="https://github.com/Ramesh007cse/Personal-Website" class="btn btn-sm btn-outline-dark">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Agri Helpline -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card project-card">
+                        <img src="agri-helpline.png" class="card-img-top" alt="Agri Helpline">
+                        <div class="card-body">
+                            <h5 class="card-title">Agri Helpline</h5>
+                            <p class="card-text">Provides farmers with expert advice, solutions and support on agriculture.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary tech-badge">PHP</span>
+                                <span class="badge bg-success tech-badge">MySQL</span>
+                                <span class="badge bg-info tech-badge">JavaScript</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="agri-helpline-enhanced.html" class="btn btn-sm btn-outline-primary">About</a>
+                                <a href="https://github.com/Ramesh007cse/AgriHelpLine" class="btn btn-sm btn-outline-dark">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Computer Hardware Shop -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card project-card">
+                        <img src="computer-shop.jpg" class="card-img-top" alt="Computer Hardware Shop">
+                        <div class="card-body">
+                            <h5 class="card-title">Computer Hardware Shop</h5>
+                            <p class="card-text">Online ordering and servicing of computer hardware products.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary tech-badge">HTML</span>
+                                <span class="badge bg-success tech-badge">CSS</span>
+                                <span class="badge bg-info tech-badge">JavaScript</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="computer-shop-enhanced.html" class="btn btn-sm btn-outline-primary">About</a>
+                                <a href="https://github.com/Ramesh007cse/Computer-Hardware-Shop" class="btn btn-sm btn-outline-dark">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Temperature Prediction -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card project-card">
+                        <img src="temperature-prediction.jpg" class="card-img-top" alt="Real-Time Temperature Prediction">
+                        <div class="card-body">
+                            <h5 class="card-title">Real-Time Temperature Prediction</h5>
+                            <p class="card-text">Predicts live temperature using JavaScript and weather API.</p>
+                            <div class="mb-3">
+                                <span class="badge bg-primary tech-badge">HTML</span>
+                                <span class="badge bg-success tech-badge">CSS</span>
+                                <span class="badge bg-info tech-badge">JavaScript</span>
+                                <span class="badge bg-warning tech-badge">API</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="temperature-prediction-demo.html" class="btn btn-sm btn-outline-primary">Live Demo</a>
+                                <a href="https://github.com/Ramesh007cse/Real-Time-Temperature-Prediction" class="btn btn-sm btn-outline-dark">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="py-5 contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center text-white" data-aos="fade-up">Get In Touch</h2>
+            <div class="row g-4 justify-content-center">
+                <!-- Contact Form -->
+                <div class="col-md-6" data-aos="fade-up">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body p-4">
+                            <h3 class="card-title text-center mb-4">Send Me a Message</h3>
+                            <form id="contactForm">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                                    <label for="email">Your Email</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" style="height: 120px" placeholder="Your Message" required></textarea>
+                                    <label for="message">Your Message</label>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg px-4 py-3">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info Cards -->
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-0 shadow">
+                        <div class="card-body p-4">
+                            <h3 class="card-title text-center mb-4">Contact Info</h3>
+                            
+                            <!-- Address Card -->
+                            <div class="contact-method mb-4 p-3 rounded-3">
+                                <div class="contact-icon mb-2">
+                                    <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                                </div>
+                                <h4>Address</h4>
+                                <p class="mb-0">TamilNadu, India</p>
+                            </div>
+                            
+                            <!-- Email Card -->
+                            <div class="contact-method mb-4 p-3 rounded-3">
+                                <div class="contact-icon mb-2">
+                                    <i class="fas fa-envelope fa-2x text-primary"></i>
+                                </div>
+                                <h4>Email</h4>
+                                <a href="mailto:ramesh10ram6@gmail.com" class="text-dark">ramesh10ram6@gmail.com</a>
+                            </div>
+                            
+                            <!-- Phone Card -->
+                            <div class="contact-method mb-4 p-3 rounded-3">
+                                <div class="contact-icon mb-2">
+                                    <i class="fas fa-phone fa-2x text-primary"></i>
+                                </div>
+                                <h4>Phone</h4>
+                                <a href="tel:+919876543210" class="text-dark">+91 9360656401</a>
+                            </div>
+                            
+                            <!-- Social Media Links -->
+                            <div class="contact-method p-3 rounded-3">
+                                <h4 class="text-center mb-3">Connect With Me</h4>
+                                <div class="d-flex justify-content-center">
+                                    <a href="https://github.com/Ramesh007cse" class="social-icon mx-2" target="_blank">
+                                        <i class="fab fa-github fa-2x"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/ramesh-i-1bb963223/" class="social-icon mx-2" target="_blank">
+                                        <i class="fab fa-linkedin fa-2x"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2025 Ramesh I. All rights reserved.</p>
+                    <p class="mb-0"><i class="fas fa-phone me-2"></i>+91 9360656401</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="https://github.com/Ramesh007cse" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ramesh-i-1bb963223/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:ramesh10ram6@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+
+        // Apply saved theme or preferred color scheme
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            document.body.classList.add('dark-theme');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            themeToggle.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Initialize AOS animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark', 'shadow');
+            } else {
+                navbar.classList.remove('bg-dark', 'shadow');
+            }
+        });
+
+        // Contact Form Handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields');
+                return;
+            }
+            
+            // Here you would typically send the form data to a server
+            // For demo purposes, we'll just show a success message
+            alert(`Thank you ${name}! Your message has been sent successfully. I'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

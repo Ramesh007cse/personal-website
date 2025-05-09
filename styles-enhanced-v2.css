@@ -1,0 +1,24 @@
+/* Base Styles */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+}
+
+/* Navbar */
+.navbar {
+  padding: 1.2rem 0;
+  background-color: rgba(44, 62, 80, 0.9);
+  transition: all 0.3s ease;
+}
+
+/* About Section */
+.about-img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid var(--primary-color);
+}
